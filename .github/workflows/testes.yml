@@ -1,0 +1,18 @@
+name: Testes
+on: push
+jobs:
+    teste:
+        runs-on: ubuntu-latest
+        steps:
+            - name: baixar codigo
+              uses: actions/checkout@v3
+            - name: instalar node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: instalar dependencias
+              run: npm ci
+            - name: rodar testes
+              run: npm test      
+
+            
